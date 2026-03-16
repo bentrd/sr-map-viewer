@@ -38,6 +38,8 @@ export default function MarkerPanel({
         normY: m.normY,
         tileX: Math.round(m.normX * mapWidth),
         tileY: Math.round(m.normY * mapHeight),
+        worldX: Math.round(m.normX * mapWidth) * 16,
+        worldY: Math.round(m.normY * mapHeight) * 16,
         color: m.color,
       })),
     };
@@ -126,6 +128,11 @@ export default function MarkerPanel({
                     <div style={coordLineStyle}>
                       <span style={coordStyle}>
                         tile ({tileX}, {tileY})
+                      </span>
+                    </div>
+                    <div style={coordLineStyle}>
+                      <span style={coordStyle}>
+                        world ({tileX * 16}, {tileY * 16})
                       </span>
                     </div>
                   </div>
